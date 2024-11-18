@@ -1,6 +1,6 @@
 {
   "name": "@wdio/eslint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ESLint configurations for WebdriverIO projects",
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
