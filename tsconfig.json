@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "node16",
+        "strict": true,
+        "moduleResolution": "node16",
+        "target": "ES2020",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "rootDir": ".",
+        "outDir": "dist",
+    },
+    "exclude": [
+        "dist",
+        "node_modules",
+    ]
+}

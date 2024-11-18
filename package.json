@@ -1,0 +1,39 @@
+{
+  "name": "@wdio/eslint",
+  "version": "0.0.0",
+  "description": "ESLint configurations for WebdriverIO projects",
+  "author": "Christian Bromann <mail@bromann.dev>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "wdio",
+    "webdriverio",
+    "eslint"
+  ],
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdriverio/eslint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webdriverio/eslint/issues"
+  },
+  "dependencies": {
+    "globals": "^15.12.0",
+    "@eslint/js": "^9.15.0",
+    "typescript-eslint": "^8.14.0",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-wdio": "^9.2.11",
+    "@typescript-eslint/utils": "^8.14.0"
+  },
+  "devDependencies": {
+    "release-it": "^17.10.0",
+    "typescript": "^5.6.3"
+  }
+}
