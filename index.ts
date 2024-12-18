@@ -121,3 +121,8 @@ export const config = (...configs: tseslint.ConfigWithExtends[]) => tseslint.con
  * export a `config` function that merges the base configs with the provided ones.
  */
 export default { config };
+
+/**
+ * export primitives that may be useful for extending the base configs.
+ */
+export { globals };
