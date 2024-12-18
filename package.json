@@ -30,7 +30,7 @@
   "dependencies": {
     "globals": "^15.12.0",
     "@eslint/js": "^9.15.0",
-    "typescript-eslint": "^8.14.0",
+    "typescript-eslint": "^8.18.1",
     "eslint-plugin-unicorn": "^56.0.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "eslint-plugin-wdio": "^9.2.11",
