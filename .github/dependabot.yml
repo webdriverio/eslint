@@ -5,7 +5,6 @@ updates:
   schedule:
     interval: weekly
   open-pull-requests-limit: 10
-
   groups:
     patch-deps-updates-main:
       update-types:
@@ -16,6 +15,7 @@ updates:
     major-deps-updates-main:
       update-types:
         - "major"
+
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
