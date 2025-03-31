@@ -5,6 +5,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import unusedImports from 'eslint-plugin-unused-imports';
 import { configs as wdioPlugin } from 'eslint-plugin-wdio';
 import type { TSESLint } from '@typescript-eslint/utils';
+import stylistic from '@stylistic/eslint-plugin'
 
 /**
  * ESLint configuration for OutSystem projects.
@@ -22,9 +23,11 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
         extends: [
             wdioPlugin['flat/recommended']
         ],
+
         plugins: {
             unicorn,
             'unused-imports': unusedImports,
+            '@stylistic': stylistic,
         },
 
         languageOptions: {
@@ -34,52 +37,47 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
         },
 
         rules: {
-            quotes: ['error', 'single', {
+            /**
+             * Stylistic rules
+             */
+            '@stylistic/quotes': ['error', 'single', {
                 avoidEscape: true,
             }],
+            '@stylistic/semi': ['error', 'never'],
+            '@stylistic/indent': [2, 4],
+            '@stylistic/no-multiple-empty-lines': [2, {
+                max: 1,
+                maxEOF: 1,
+            }],
+            '@stylistic/array-bracket-spacing': ['error', 'never'],
+            '@stylistic/brace-style': ['error', '1tbs', {
+                allowSingleLine: true,
+            }],
+            '@stylistic/comma-spacing': ['error', {
+                before: false,
+                after: true,
+            }],
+            '@stylistic/no-tabs': 'error',
+            '@stylistic/no-trailing-spaces': ['error', {
+                skipBlankLines: false,
+                ignoreComments: false,
+            }],
+            '@stylistic/object-curly-spacing': ['error', 'always'],
+            '@stylistic/keyword-spacing': ['error'],
+            '@stylistic/linebreak-style': ['error', 'unix'],
 
             camelcase: ['error', {
                 properties: 'never',
             }],
-
-            semi: ['error', 'never'],
-            indent: [2, 4],
             eqeqeq: ['error', 'always'],
             'prefer-const': 'error',
-
-            'no-multiple-empty-lines': [2, {
-                max: 1,
-                maxEOF: 1,
-            }],
-
-            'array-bracket-spacing': ['error', 'never'],
-
-            'brace-style': ['error', '1tbs', {
-                allowSingleLine: true,
-            }],
-
-            'comma-spacing': ['error', {
-                before: false,
-                after: true,
-            }],
-
             'no-lonely-if': 'error',
             'dot-notation': 'error',
             'no-else-return': 'error',
-            'no-tabs': 'error',
-
-            'no-trailing-spaces': ['error', {
-                skipBlankLines: false,
-                ignoreComments: false,
-            }],
-
             'no-var': 'error',
             'unicode-bom': ['error', 'never'],
             curly: ['error', 'all'],
-            'object-curly-spacing': ['error', 'always'],
-            'keyword-spacing': ['error'],
             'require-atomic-updates': 0,
-            'linebreak-style': ['error', 'unix'],
             'unicorn/prefer-node-protocol': ['error'],
             'no-restricted-syntax': ['error', 'IfStatement > ExpressionStatement > AssignmentExpression'],
             'unicorn/prefer-ternary': 'error',
