@@ -44,8 +44,8 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
                 avoidEscape: true,
             }],
             '@stylistic/semi': ['error', 'never'],
-            '@stylistic/indent': [2, 4],
-            '@stylistic/no-multiple-empty-lines': [2, {
+            '@stylistic/indent': ['error', 4, { 'SwitchCase': 0 }],
+            '@stylistic/no-multiple-empty-lines': ['error', {
                 max: 1,
                 maxEOF: 1,
             }],
