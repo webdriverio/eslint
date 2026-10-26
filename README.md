@@ -2,7 +2,9 @@
 
 > ESLint configurations for WebdriverIO projects
 
-This package is meant for internal usage only within the WebdriverIO ecosystem. However if you find this package useful, feel free to use it.
+> [!NOTE]
+> This package is meant for internal usage only within the WebdriverIO ecosystem. However if you find this package useful, feel free to use it.
+> If you are looking for ESLint rules intended for users of WebdriverIO, see [`eslint-plugin-wdio`](https://www.npmjs.com/package/eslint-plugin-wdio).
 
 ## Install
 
