@@ -1,14 +1,14 @@
-import globals from 'globals';
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import unicorn from 'eslint-plugin-unicorn';
-import unusedImports from 'eslint-plugin-unused-imports';
-import { configs as wdioPlugin } from 'eslint-plugin-wdio';
-import type { TSESLint } from '@typescript-eslint/utils';
+import globals from 'globals'
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import unicorn from 'eslint-plugin-unicorn'
+import unusedImports from 'eslint-plugin-unused-imports'
+import { configs as wdioPlugin } from 'eslint-plugin-wdio'
+import type { TSESLint } from '@typescript-eslint/utils'
 import stylistic from '@stylistic/eslint-plugin'
 
 /**
- * ESLint configuration for OutSystem projects.
+ * ESLint configuration for WebdriverIO projects.
  */
 const baseConfigs: tseslint.ConfigWithExtends[] = [
     /**
@@ -16,6 +16,13 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
      */
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
+    stylistic.configs.customize({
+        indent: 4,
+        quotes: 'single',
+        semi: false,
+        jsx: true,
+        braceStyle: '1tbs',
+    }),
     /**
      * common Eslint rules for WebdriverIO projects
      */
@@ -44,7 +51,7 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
                 avoidEscape: true,
             }],
             '@stylistic/semi': ['error', 'never'],
-            '@stylistic/indent': ['error', 4, { 'SwitchCase': 0 }],
+            '@stylistic/indent': ['error', 4, { SwitchCase: 0 }],
             '@stylistic/no-multiple-empty-lines': ['error', {
                 max: 1,
                 maxEOF: 1,
@@ -108,19 +115,19 @@ const baseConfigs: tseslint.ConfigWithExtends[] = [
             'no-redeclare': 'off',
         },
     }
-];
+]
 
 export const config = (...configs: tseslint.ConfigWithExtends[]) => tseslint.config(
     ...baseConfigs,
     ...configs
-) as TSESLint.FlatConfig.ConfigArray;
+) as TSESLint.FlatConfig.ConfigArray
 
 /**
  * export a `config` function that merges the base configs with the provided ones.
  */
-export default { config };
+export default { config }
 
 /**
  * export primitives that may be useful for extending the base configs.
  */
-export { globals };
+export { globals }
